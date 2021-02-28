@@ -39,19 +39,25 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="odd">
-            <td id="hour">09 AM</td>
-            <td class="col-5">
-              <textarea name="message" rows="3" cols="30" id="task"></textarea>
-            </td>
-            <td>
-              <input type="checkbox" id="checkbox" name="status" value="complete">
-            </td>
-            <td>
-              <input type="submit" value="save" class="btn">
-            </td>
-          </tr>
-          <tr class="even">
+          <form>
+            <tr class="odd">
+              <td id="hour">09 AM</td>
+              <td class="col-5">
+                <textarea id="task" name="message" rows="3" cols="30"></textarea>
+              </td>
+              <td>
+                <select id="priority">
+                  <option value="High">High</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Low">Low</option>
+                </select>
+              </td>
+              <td>
+                <button id="saveBtn" class="btn">SAVE</button>
+              </td>
+            </tr>
+        </form>
+          <!-- <tr class="even">
             <td id="hour">10 AM</td>
             <td class="col-5">
               <textarea name="message" rows="3" cols="30" id="task"></textarea>
@@ -133,7 +139,7 @@
             </td>
             <td>
               <input type="submit" value="save" class="btn">
-            </td>
+            </td> -->
           </tr>
         </tbody>
       </table>
