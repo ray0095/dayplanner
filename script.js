@@ -1,37 +1,40 @@
 var currentDay = moment();
 $("#currentDay").text(currentDay.format(" [Today is ] dddd, MMM Do"));
+var currentTime = moment();
 
-var taskList = $("#task");
-var saveBtn = $("#saveBtn");
-var priority = $("#priority");
+
+var taskList = document.getElementById("task");
+var saveBtn = document.getElementById("saveBtn");
+var priority = document.getElementById("priority");
 
  saveTaskList = () => {
     var taskListItems = {
-        priority: priority.value,
-        taskList: taskList.value.trim()
+        priorityLevel: priority.value,
+        taskListItem: taskList.value.trim()
     };
 
     localStorage.setItem("taskListItems", JSON.stringify(taskListItems));
 }
 
-// function renderTaskList () {
-//     var allTasks = JSON.parse(localStorage.getItem("taskListItems"));
-    
-//     if (allTasks !== null) {
-//         taskList.innerHTML = allTasks;
-//     } else {
-//         return;
-//     }
-// }
-
 saveBtn.addEventListener("click", function(e) {
-     e.preventDefault();
-     saveTaskList();
-//     renderTaskList();
+    e.preventDefault();
+    saveTaskList();
+    renderTaskList();
 });
 
-// init = () => {
-//     renderTaskList();
-// }
+function renderTaskList () {
+     var allTasks = JSON.parse(localStorage.getItem("taskListItems"));
+    
+    if (allTasks !== null) {
+        taskList.innerHTML = allTasks;
+        } else {
+        return;
+    }
+ }
 
-// init ();
+
+init = () => {
+     renderTaskList();
+ }
+
+ init ();
