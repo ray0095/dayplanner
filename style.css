@@ -68,3 +68,14 @@ tbody {
   background-color: var(--even-row);
 }
 
+.present {
+  background-color: green;
+}
+
+.past {
+  background-color: grey;
+}
+
+.future {
+  background-color: burlywood;
+}
