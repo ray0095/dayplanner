@@ -14,11 +14,11 @@
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css" />
+
     <title>Work Day Scheduler</title>
   </head>
 
@@ -34,156 +34,144 @@
           <tr>
             <th scope="col">hour</th>
             <th scope="col" class="col-5">task</th>
-            <th scope="col">status</th>
             <th scope="col">save</th>
           </tr>
         </thead>
         <tbody>
-            <tr class="odd">
-              <td id="hour9" class="timeblock"></td>
-                <td class="col-5">
-                  <textarea id="task" class="taskBox" name="message" rows="3" cols="30"></textarea>
-                </td>
+            <tr class="timeValue" data-index="9">
                 <td>
-                  <select id="priority">
-                    <option value="High">High</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Low">Low</option>
-                  </select>
+                  <div>
+                    <h3>09 AM</h3>
+                  </div>
                 </td>
-                <td>
-                  <button id="saveBtn" class="btn">SAVE</button>
-                </td>
+                  <td class="col-5">
+                    <textarea id="task1" class="taskBox" name="message" rows="3" cols="30"></textarea>
+                  </td>
+                  <td>
+                    <button id="saveBtn" class="btn">save</button>
+                  </td>
             </tr>
-
-            <tr class="even">
-              <td id="hour10"></td>
-            
-                <td class="col-5">
-                  <textarea id="task2" class="taskBox" name="message" rows="3" cols="30"></textarea>
-                </td>
-                <td>
-                  <select id="priority">
-                    <option value="High">High</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Low">Low</option>
-                  </select>
-                </td>
-                <td>
-                  <button id="saveBtn2" class="btn">SAVE</button>
-                </td>
-             
-            </tr>
-
-            <tr class="odd">
-              <td id="hour11"></td>
-                <td class="col-5">
-                  <textarea id="task" class="taskBox" name="message" rows="3" cols="30"></textarea>
-                </td>
-                <td>
-                  <select id="priority">
-                    <option value="High">High</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Low">Low</option>
-                  </select>
-                </td>
-                <td>
-                  <button id="saveBtn" class="btn">SAVE</button>
-                </td>
-            </tr>
-
-            <tr class="even">
-              <td id="hour12"></td>
-            
+            <tr class="timeValue" data-index="10">
+              <td>
+                <div>
+                  <h3>10 AM</h3>
+                </div>
+              </td>
                 <td class="col-5">
                   <textarea id="task2" class="taskBox" name="message" rows="3" cols="30"></textarea>
                 </td>
                 <td>
-                  <select id="priority">
-                    <option value="High">High</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Low">Low</option>
-                  </select>
+                  <button id="saveBtn" class="btn">save</button>
                 </td>
-                <td>
-                  <button id="saveBtn2" class="btn">SAVE</button>
-                </td>
-             
-            </tr>
-
-            <tr class="odd">
-              <td id="hour13"></td>
-                <td class="col-5">
-                  <textarea id="task" class="taskBox" name="message" rows="3" cols="30"></textarea>
-                </td>
-                <td>
-                  <select id="priority">
-                    <option value="High">High</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Low">Low</option>
-                  </select>
-                </td>
-                <td>
-                  <button id="saveBtn" class="btn">SAVE</button>
-                </td>
-            </tr>
-
-            <tr class="even">
-              <td id="hour14"></td>
-                <td class="col-5">
-                  <textarea id="task" class="taskBox" name="message" rows="3" cols="30"></textarea>
-                </td>
-                <td>
-                  <select id="priority">
-                    <option value="High">High</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Low">Low</option>
-                  </select>
-                </td>
-                <td>
-                  <button id="saveBtn" class="btn">SAVE</button>
-                </td>
-            </tr>
-
-            <tr class="odd">
-              <td id="hour15"></td>
-                <td class="col-5">
-                  <textarea id="task" class="taskBox" name="message" rows="3" cols="30"></textarea>
-                </td>
-                <td>
-                  <select id="priority">
-                    <option value="High">High</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Low">Low</option>
-                  </select>
-                </td>
-                <td>
-                  <button id="saveBtn" class="btn">SAVE</button>
-                </td>
-            </tr>
-
-            <tr class="even">
-              <td id="hour16"></td>
-                <td class="col-5">
-                  <textarea id="task" class="taskBox" name="message" rows="3" cols="30"></textarea>
-                </td>
-                <td>
-                  <select id="priority">
-                    <option value="High">High</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Low">Low</option>
-                  </select>
-                </td>
-                <td>
-                  <button id="saveBtn" class="btn">SAVE</button>
-                </td>
-            </tr>
+          </tr>
+          <tr class="timeValue" data-index="11">
+            <td>
+              <div>
+                <h3>11 AM</h3>
+              </div>
+            </td>
+              <td class="col-5">
+                <textarea id="task3" class="taskBox" name="message" rows="3" cols="30"></textarea>
+              </td>
+              <td>
+                <button id="saveBtn" class="btn">save</button>
+              </td>
+          </tr>
+          <tr class="timeValue" data-index="12">
+            <td>
+              <div>
+                <h3>12 PM</h3>
+              </div>
+            </td>
+              <td class="col-5">
+                <textarea id="task4" class="taskBox" name="message" rows="3" cols="30"></textarea>
+              </td>
+              <td>
+                <button id="saveBtn" class="btn">save</button>
+              </td>
+          </tr>
+          <tr class="timeValue" data-index="13">
+            <td>
+              <div>
+                <h3>01 PM</h3>
+              </div>
+            </td>
+              <td class="col-5">
+                <textarea id="task5" class="taskBox" name="message" rows="3" cols="30"></textarea>
+              </td>
+              <td>
+                <button id="saveBtn" class="btn">save</button>
+              </td>
+          </tr>
+          <tr class="timeValue" data-index="14">
+            <td>
+              <div>
+                <h3>02 PM</h3>
+              </div>
+            </td>
+              <td class="col-5">
+                <textarea id="task6" class="taskBox" name="message" rows="3" cols="30"></textarea>
+              </td>
+              <td>
+                <button id="saveBtn" class="btn">save</button>
+              </td>
+          </tr>
+          <tr class="timeValue" data-index="15">
+            <td>
+              <div>
+                <h3>03 PM</h3>
+              </div>
+            </td>
+              <td class="col-5">
+                <textarea id="task7" class="taskBox" name="message" rows="3" cols="30"></textarea>
+              </td>
+              <td>
+                <button id="saveBtn" class="btn">save</button>
+              </td>
+          </tr>
+          <tr class="timeValue" data-index="16">
+            <td>
+              <div>
+                <h3>04 PM</h3>
+              </div>
+            </td>
+              <td class="col-5">
+                <textarea id="task8" class="taskBox" name="message" rows="3" cols="30"></textarea>
+              </td>
+              <td>
+                <button id="saveBtn" class="btn">save</button>
+              </td>
+          </tr>
+          <tr class="timeValue" data-index="17">
+            <td>
+              <div>
+                <h3>05 PM</h3>
+              </div>
+            </td>
+              <td class="col-5">
+                <textarea id="task9" class="taskBox" name="message" rows="3" cols="30"></textarea>
+              </td>
+              <td>
+                <button id="saveBtn" class="btn">save</button>
+              </td>
+          </tr>
 
         </tbody>
       </table>
+      <button id="clearBtn" class="btn">clear all</button>
     </div> 
 
-    
+    <footer><!--footer-->
+      <a href="https://github.com/ray0095" target="_blank">
+      <i class="fab fa-github"></i>
+      </a>
+      <p>brought to you by rachelTheDeveloper &#10084</p>
+      <a href="https://www.linkedin.com/in/rachel-strong-54276a142/" target="_blank">
+      <i class="fab fa-linkedin"></i>
+      </a>
+    </footer>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>

@@ -2,39 +2,54 @@
   --planner-color: #484553;
   --planer-head: white;
   --even-row:  #4845531f;
+  --live-row: #cd8de5;
+  --future-row: 
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 16px;
   line-height: 1;
+}
+
+a {
+  color: var(--live-row);
 }
 
 textarea{
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
-  border-left: 1px solid black;
+  color: var(--planner-color);
+  border-left: 2px solid var(--planner-color);
   padding: 10px;
   width: 100%;
+  border-radius: 5px;
+}
+
+textarea:hover {
+  box-shadow: 1px 1px 10px var(--live-row);
 }
 
 .jumbotron {
   text-align: center;
   background-color: transparent;
-  color: black;
+  color: var(--planer-head);
   border-radius: 0;
-  border-bottom: 10px solid black;
+  background-color: var(--planner-color);
 }
+
 
 .description{
   white-space: pre-wrap;
 }
 
-.time-block{
+#currentDay{
   text-align: center;
   border-radius: 15px;
+  font-size: 2.0rem;
+  color: var(--live-row);
+  text-shadow: 1px 1px 10px var(--planer-head);
 }
 
 
@@ -42,6 +57,8 @@ textarea{
 thead { 
   background-color: var(--planner-color) ;
   color: var(--planer-head) ;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 tbody {
@@ -50,32 +67,50 @@ tbody {
   align-items: center;
 }
 
+h3{
+  text-align: right;
+  color: var(--planner-color);
+}
+
 #hour {
   text-align: right;
   font-size: 1.5rem;
 }
 
-#checkbox {
-  align-items: center;
-}
-
 .btn {
   background-color: var(--planner-color);
   color: var(--planer-head);
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-weight: 600;
 }
 
-.even {
+#clearBtn {
+  width: 100%;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+footer { /*flex box for footer*/
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  padding: 40px;
   background-color: var(--even-row);
+  color: var(--planner-color);
+  font-size: 1rem;
 }
 
+/*row styles based on time*/
 .present {
-  background-color: green;
+  background-color: var(--live-row);
 }
 
 .past {
-  background-color: grey;
+  background-color: var(--even-row);
 }
 
 .future {
-  background-color: burlywood;
+  background-color: var(--planer-head);
 }

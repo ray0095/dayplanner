@@ -1,79 +1,53 @@
-var currentDay = moment();
+var currentDay = moment(); //Grabs current date prints to page
 $("#currentDay").text(currentDay.format(" [Today is ] dddd, MMM Do"));
+var currentHour = moment().format('HH');//Grabs current hour
+var currentInt = parseInt(currentHour); //Changes current hour to an integer
 
-//hour block values
-var hour9 = moment("09:00:00", "HH:mm").format("hh A");
-$("#hour9").text(hour9);
-var hour10 = moment("10:00:00", "HH:mm").format("hh A");
-$("#hour10").text(hour10);
-var hour11 = moment("11:00:00", "HH:mm").format("hh A");
-$("#hour11").text(hour11);
-var hour12 = moment("12:00:00", "HH:mm").format("hh A");
-$("#hour12").text(hour12);
-var hour13 = moment("13:00:00", "HH:mm").format("hh A");
-$("#hour13").text(hour13);
-var hour14 = moment("14:00:00", "HH:mm").format("hh A");
-$("#hour14").text(hour14);
-var hour15 = moment("15:00:00", "HH:mm").format("hh A");
-$("#hour15").text(hour15);
-var hour16 = moment("16:00:00", "HH:mm").format("hh A");
-$("#hour16").text(hour16);
+//Loop to change row color based on time
+  function changeColor() {
+    $('.timeValue').each(function(index,item){ 
+      blockValue = parseInt($(item).data('index'));
+      if(blockValue === currentInt){
+          $(item).addClass('present');
+      } else if (blockValue < currentInt) {
+        $(item).addClass('past');
+      } else {
+        $(item).addClass('future');
+      }
+    });
 
+};
+changeColor();//runs change color function
 
-// function timeColor() {
-//   var currentHour = moment().format('hh A');
-//   console.log(currentHour);
-  
-// }
+//Checks time every second and reruns changeColor function
+var reRun = window.setInterval(function(){
+  changeColor();
+}, 1000);
 
+//get and render user input from local storage 
+$(document).ready(function(){
+  $('.taskBox').each(function(){    
+      var id = $(this).attr('id');
+      var value = localStorage.getItem(id);
+      $(this).val(value);
+  }); 
+});
 
+//save user input to local storage
+$('.btn').on('click', function(){
+  $('.taskBox').each(function(){    
+      var id = $(this).attr('id');
+      var value = $(this).val();
+      localStorage.setItem(id, value);
+  });   
+});
 
-var taskList = document.getElementById("task");
-var saveBtn = document.getElementById("saveBtn");
-var taskList2 = document.getElementById("task2");
-var saveBtn2 = document.getElementById("saveBtn2");
-
-//9 oclock hour
-function saveTaskList1() {
-    var task1 = taskList.value.trim()
-   
-    localStorage.setItem("tasks", task1);
-}
-  
-  function renderTaskList1() {
-    var pastTaskList = localStorage.getItem("tasks");
-    taskList.textContent = pastTaskList;
-  }
-  
-  saveBtn.addEventListener("click", function(event) {
-  event.preventDefault();
-  saveTaskList1();
-  renderTaskList1();
-  });
-
-  //10 oclock hour
-  function saveTaskList2() {
-    var task2 = taskList.value.trim()
-   
-    localStorage.setItem("tasks2", task2);
-}
-  
-  function renderTaskList2() {
-    var pastTaskList = localStorage.getItem("tasks2");
-    taskList2.textContent = pastTaskList;
-  }
-  
-
-  saveBtn2.addEventListener("click", function(event) {
-  event.preventDefault();
-  saveTaskList2();
-  renderTaskList2();
-  });
-
-  
-  function init() {
-    renderTaskList1();
-    renderTaskList2();
-  }
-  init();
-  
+//clear all tasks button
+$('#clearBtn').on('click', function(){
+  $('.taskBox').each(function(){
+      $('.taskBox').val('');    
+      var id = $(this).attr('id');
+      var value = $(this).val();
+      localStorage.setItem(id, value);
+  });   
+});
