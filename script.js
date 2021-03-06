@@ -1,12 +1,13 @@
 var currentDay = moment(); //Grabs current date prints to page
 $("#currentDay").text(currentDay.format(" [Today is ] dddd, MMM Do"));
-var currentHour = moment().format('HH');//Grabs current hour
-var currentInt = parseInt(currentHour); //Changes current hour to an integer
+
 
 //Loop to change row color based on time
-  function changeColor() {
+function changeColor() {
     $('.timeValue').each(function(index,item){ 
-      blockValue = parseInt($(item).data('index'));
+      var currentHour = moment().format('HH');//Grabs current hour
+      var currentInt = parseInt(currentHour); //Changes current hour to an integer
+      var blockValue = parseInt($(item).data('index'));
       if(blockValue === currentInt){
           $(item).addClass('present');
       } else if (blockValue < currentInt) {
@@ -15,8 +16,8 @@ var currentInt = parseInt(currentHour); //Changes current hour to an integer
         $(item).addClass('future');
       }
     });
-
 };
+
 changeColor();//runs change color function
 
 //Checks time every second and reruns changeColor function
